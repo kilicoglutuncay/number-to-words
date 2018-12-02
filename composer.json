@@ -1,0 +1,24 @@
+{
+    "name": "kilicoglutuncay/number-to-words",
+    "description": "PHP number to words converter",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tuncay Kılıçoğlu",
+            "email": "kilicoglutuncay@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "NumberToWords\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NumberToWords\\": "tests"
+        }
+    }
+}
