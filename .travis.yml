@@ -9,7 +9,7 @@ php:
 
 install:
 - composer self-update
-- composer install
+- composer install --no-dev
 
 script:
 - make build
