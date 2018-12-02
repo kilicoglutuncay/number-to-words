@@ -12,7 +12,7 @@ install:
 - composer install
 
 script:
-- make build
+- phpunit --coverage-text --coverage-clover=coverage.clover
 
 #after_script:
 #- vendor/bin/test-reporter
