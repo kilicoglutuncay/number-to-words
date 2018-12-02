@@ -9,10 +9,10 @@ php:
 
 install:
 - composer self-update
-- composer install --no-dev
+- composer install
 
 script:
 - make build
 
-after_script:
-- vendor/bin/test-reporter
+#after_script:
+#- vendor/bin/test-reporter
