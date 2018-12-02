@@ -5,11 +5,7 @@ This library allows you to convert a number to words.
 Add package to your composer.json
 
 ```json
-{
-    "require": {
-        "kilicoglutuncay/number-to-words": "dev"
-    }
-}
+composer require kilicoglutuncay/number-to-words
 ```
 
 ## Usage
