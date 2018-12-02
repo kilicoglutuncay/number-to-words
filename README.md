@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/kilicoglutuncay/number-to-words.svg?branch=master)](https://travis-ci.org/kilicoglutuncay/number-to-words)
 This library allows you to convert a number to words.
 
 ## Installation
