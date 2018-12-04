@@ -1,30 +1,30 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dalarim
- * Date: 2.12.2018
- * Time: 02:39
- */
 
 namespace NumberToWords;
 
 
 use NumberToWords\Converters\ConverterInterface;
+use NumberToWords\Options\Options;
 use PHPUnit\Framework\TestCase;
 
-class NumberToWordsTest extends TestCase {
+class NumberToWordsTest extends TestCase
+{
 
 
-	public function testThatIfConverterDoesNotExistThenThrowsException(){
-		$this->expectException(\Exception::class);
-		$numberToWords = new NumberToWords();
-		$numberToWords->getConverter('xdfg');
-	}
+    public function testThatIfConverterDoesNotExistThenThrowsException()
+    {
+        $this->expectException(\Exception::class);
+        $numberToWords = new NumberToWords();
+        $options = new Options;
+        $numberToWords->getConverter('xdfg', $options);
+    }
 
-	public function testConverterExists(){
+    public function testConverterExists()
+    {
 
-		$numberToWords = new NumberToWords();
-		$expected = ($numberToWords->getConverter('tr'));
-		$this->assertTrue($expected instanceof ConverterInterface);
-	}
+        $numberToWords = new NumberToWords();
+        $options = new Options;
+        $expected = ($numberToWords->getConverter('tr', $options));
+        $this->assertTrue($expected instanceof ConverterInterface);
+    }
 }
