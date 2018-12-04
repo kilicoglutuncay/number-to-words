@@ -1,15 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dalarim
- * Date: 1.12.2018
- * Time: 20:11
- */
 
 namespace NumberToWords\Converters;
 
 
+use NumberToWords\Options\Options;
+
 interface ConverterInterface {
-	function convertToWords($number);
+    function __construct(Options $options);
+
+    function convertToWords($number);
 
 }

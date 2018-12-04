@@ -1,15 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dalarim
- * Date: 1.12.2018
- * Time: 22:14
- */
 
 namespace NumberToWords\Converters\Locale;
 
 
 use NumberToWords\NumberToWords;
+use NumberToWords\Options\Options;
 use PHPUnit\Framework\TestCase;
 
 class TrTest extends TestCase {
@@ -19,7 +14,7 @@ class TrTest extends TestCase {
 	 */
 	public function testConvertNumberToWords($actual,$expected){
 		$numberToWords = new NumberToWords();
-		$converter = $numberToWords->getConverter('tr');
+		$converter = $numberToWords->getConverter('tr',(new Options)->setWordSeparator(' '));
 		$this->assertEquals($expected,$converter->convertToWords($actual));
 	}
 
@@ -30,7 +25,7 @@ class TrTest extends TestCase {
 
 
 		$numberToWords = new NumberToWords();
-		$converter = $numberToWords->getConverter('tr');
+		$converter = $numberToWords->getConverter('tr',(new Options)->setWordSeparator(' '));
 		$converter->convertToWords('66121212121212121212121212121');
 	}
 	public function provideData(){

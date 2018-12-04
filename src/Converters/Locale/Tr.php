@@ -1,15 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dalarim
- * Date: 1.12.2018
- * Time: 20:13
- */
+
 
 namespace NumberToWords\Converters\Locale;
 
 
 use NumberToWords\Converters\ConverterInterface;
+use NumberToWords\Options\Options;
 
 class Tr implements ConverterInterface {
 	private $thousandsWords = [ '', 'bin', 'milyon', 'milyar', 'trilyon', 'katrilyon', 'kentilyon' ];
@@ -18,8 +14,13 @@ class Tr implements ConverterInterface {
 	private $unitsDigitWords = [ 'sıfır', 'bir', 'iki', 'üç', 'dört', 'beş', 'altı', 'yedi', 'sekiz', 'dokuz' ];
 	private $wordSeparator = " ";
 
+	public function __construct(Options $options)
+    {
 
-	function convertToWords( $number ) {
+        $this->wordSeparator = $options->getWordSeparator();
+    }
+
+    function convertToWords( $number ) {
 
 		$number = strval( $number );
 		if ( (int) $number === 0 ) {
